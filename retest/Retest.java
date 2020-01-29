@@ -39,8 +39,8 @@ public class Retest {
 		"2020 Manolis Christodoulou (mchris@mobi-doc.com)\n";
 	
 	static final String HS = YELLOW+"Syntax"+NOR+": retest options\n"+
-		YELLOW+"options"+NOR+
-		"\t-l: (any character) operators don't match newlines\n"+
+		YELLOW+"options:"+NOR+
+		"-l: (any character) operators don't match newlines\n"+
 		"\t-i: ignore case\n"+
 		"\t--version\n"+
 		"\t--help\n";
@@ -115,8 +115,8 @@ public class Retest {
 			if (m.find()) {
 				System.out.println("/"+YELLOW+i1+NOR+"/"+YELLOW+i2+NOR+"/ "+GREEN+"MATCH!"+NOR);
 				for (int n = 0; n <= m.groupCount(); n++) 
-					if (m.start(n) == -1 || m.end(n) == -1) System.out.printf("Group %d: <"+RED+"EMPTY"+NOR+">\n",n);
-					else System.out.printf("Group %d: %s\n", n, i1.substring(0, m.start(n))+RED+i1.substring(m.start(n), m.end(n))+NOR+i1.substring(m.end(n), i1.length()));
+					if (m.start(n) == -1 || m.end(n) == -1) System.out.printf(GREEN+"Group %d: <"+RED+"EMPTY"+NOR+">\n",n);
+					else System.out.printf(GREEN+"Group %d: "+NOR+"%s\n", n, i1.substring(0, m.start(n))+RED+i1.substring(m.start(n), m.end(n))+NOR+i1.substring(m.end(n), i1.length()));
 			} else System.out.println("/"+YELLOW+i1+NOR+"/"+YELLOW+i2+NOR+"/ "+RED+"NO MATCH"+NOR);
 		}
 		Readline.cleanup();
